@@ -11,6 +11,7 @@ docker exec -it server /bin/bash
 Login: admin
 
 Password: micro
+
 Запускаем сервис albato
 ```
 /micro run albato
