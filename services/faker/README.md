@@ -1,0 +1,23 @@
+# Faker Service
+
+This is the Faker service
+
+Generated with
+
+```
+micro new faker
+```
+
+## Usage
+
+Generate the proto code
+
+```
+make proto
+```
+
+Run the service
+
+```
+micro run .
+```

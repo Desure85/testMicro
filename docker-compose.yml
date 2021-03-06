@@ -1,0 +1,21 @@
+version: "3.5"
+
+services:
+  micro:
+    container_name: server
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./services:/opt/services
+    ports:
+      - 8099:8080
+    networks:
+      micro:
+        aliases:
+          - micro.local
+networks:
+  micro:
+    driver: bridge
+    ipam:
+        driver: default
