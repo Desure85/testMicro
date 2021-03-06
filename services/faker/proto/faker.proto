@@ -12,7 +12,7 @@ service Faker {
 }
 
 message FakeSeed {
-	string seed = 1;
+	int64 seed = 1;
 }
 
 message FakeAddressResponse {

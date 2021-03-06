@@ -51,7 +51,14 @@ func (e *Faker) PingPong(ctx context.Context, stream faker.Faker_PingPongStream)
 // FakeAddress is a bidirectional stream handler called via client.FakeAddress or the generated client code
 func (e *Faker) FakeAddress(ctx context.Context, req *faker.FakeSeed, rsp *faker.FakeAddressResponse) error {
 	log.Info("Received Faker.FakeAddress request")
+	if req.Seed != 0 {
+		fakerData.Seed(req.Seed)
+	}
 	rsp.City = fakerData.Address().City()
 	rsp.StreetAddress = fakerData.Address().StreetAddress()
+	rsp.SecondaryAddress = fakerData.Address().SecondaryAddress()
+	rsp.StreetName = fakerData.Address().StreetName()
+	rsp.BuildingNumber = fakerData.Address().BuildingNumber()
+	rsp.Postcode = fakerData.Address().Postcode()
 	return nil
 }
